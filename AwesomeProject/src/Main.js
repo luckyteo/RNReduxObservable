@@ -13,6 +13,9 @@ class Main extends Component {
     handleDecrease = () => {
         this.props.counterDecrease();
     };
+    handleStop = () => this.props.stopCounter();
+    fetchUser = () => this.props.fetchUser();
+    cancelRequest = () => this.props.cancelRequest();
 
     render() {
         return (
@@ -45,6 +48,10 @@ class Main extends Component {
         )
     }
 }
+
+const mapStateToProps = (state)=>({
+    loading: state.loading
+});
 
 export default connect(null, actions)(Main);
 
